@@ -28,8 +28,6 @@
     background: var(--cream);
     overflow-x: hidden;
   }
-
-  /* ── SCREENS ── */
   .screen {
     position: fixed; inset: 0;
     display: flex; align-items: center; justify-content: center;
@@ -40,7 +38,6 @@
   }
   .screen.active { opacity: 1; pointer-events: all; }
 
-  /* ── SCREEN 1: WELCOME ── */
   #screen1 {
     background: radial-gradient(ellipse at 30% 20%, #fce8ef 0%, #f9d0da 40%, #e8a0b8 100%);
     overflow: hidden;
@@ -98,7 +95,6 @@
     100% { transform: translateY(-10vh) rotate(20deg);  opacity: 0; }
   }
 
-  /* ── SCREEN 2: CAKE ── */
   #screen2 {
     background: linear-gradient(135deg, #1a0a10 0%, #2d0f20 50%, #1a0a10 100%);
   }
@@ -113,7 +109,6 @@
   }
   .cake-sub { color: var(--gold); font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2.5rem; }
 
-  /* SVG cake */
   #cake-svg { width: min(340px, 85vw); filter: drop-shadow(0 20px 40px rgba(212,168,83,0.3)); }
 
   .cake-msg {
@@ -124,14 +119,13 @@
   }
   .cake-msg.show { opacity: 1; }
 
-  /* Candle flames */
+
   .flame { animation: flicker 0.15s ease-in-out infinite alternate; transform-origin: bottom center; }
   @keyframes flicker {
     0%   { transform: scaleX(1)   scaleY(1)   skewX(0deg); }
     100% { transform: scaleX(0.9) scaleY(1.1) skewX(3deg); }
   }
 
-  /* ── SCREEN 3: PARTY POPPERS ── */
   #screen3 { background: var(--dark); overflow: hidden; }
   #confetti-canvas { position: absolute; inset: 0; }
   .party-content { position: relative; z-index: 5; text-align: center; padding: 2rem; }
@@ -155,7 +149,6 @@
   }
   .btn-main:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(212,168,83,0.6); }
 
-  /* ── MAIN PAGE ── */
   #main-page {
     position: relative; z-index: 1;
     opacity: 0; pointer-events: none;
@@ -165,7 +158,6 @@
   }
   #main-page.active { opacity: 1; pointer-events: all; }
 
-  /* hero */
   .hero {
     background: linear-gradient(160deg, #fce8ef 0%, #fdf0f8 50%, #ede0f7 100%);
     padding: 5rem 2rem 3rem;
@@ -198,7 +190,7 @@
     letter-spacing: 3px; text-transform: uppercase;
   }
 
-  /* photo grid */
+  
   .section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
   .section-title {
     font-family: 'Playfair Display', serif;
@@ -254,7 +246,7 @@
   .photo-card:hover .photo-overlay { opacity: 1; }
   .photo-overlay-text { color: #fff; font-size: 0.85rem; font-style: italic; }
 
-  /* messages */
+ 
   .messages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -306,7 +298,7 @@
     line-height: 1.6;
   }
 
-  /* timeline */
+
   .timeline { list-style: none; padding: 0; position: relative; }
   .timeline::before {
     content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
@@ -328,7 +320,7 @@
   .tl-year { font-size: 0.75rem; color: var(--rose); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.2rem; }
   .tl-text { font-size: 1rem; color: var(--dark); font-weight: 400; }
 
-  /* footer */
+  
   .footer {
     background: var(--dark); color: rgba(255,255,255,0.6);
     text-align: center; padding: 3rem 2rem;
@@ -342,13 +334,13 @@
     margin: 0.5rem 0;
   }
 
-  /* HELPERS */
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* upload hint */
+ 
   .upload-hint {
     background: var(--blush);
     border: 1.5px dashed var(--rose-light);
@@ -358,7 +350,7 @@
     text-align: center; margin-top: 1rem;
   }
 
-  /* responsive */
+  
   @media (max-width: 600px) {
     .photo-grid { grid-template-columns: 1fr 1fr; }
     .photo-card:nth-child(1) { grid-column: 1 / -1; }
@@ -366,7 +358,7 @@
     .messages-grid { grid-template-columns: 1fr; }
   }
 
-  /* sparkle */
+ 
   .sparkle {
     position: absolute; pointer-events: none;
     animation: sparkle 2s ease-in-out infinite;
@@ -379,7 +371,7 @@
 </head>
 <body>
 
-<!-- ████ SCREEN 1: WELCOME ████ -->
+
 <div class="screen active" id="screen1">
   <div class="bg-orb orb1"></div>
   <div class="bg-orb orb2"></div>
@@ -398,7 +390,7 @@
   </div>
 </div>
 
-<!-- ████ SCREEN 2: CAKE CUTTING ████ -->
+
 <div class="screen" id="screen2">
   <div class="cake-scene">
     <p class="cake-sub">🕯️ Make a wish</p>
@@ -511,7 +503,7 @@
   </div>
 </div>
 
-<!-- ████ MAIN PAGE ████ -->
+
 <div id="main-page">
 
   <!-- HERO -->
@@ -550,12 +542,9 @@
       </div>
     </div>
 
-    <!-- <div class="upload-hint">
-      💡 To personalise this page: replace the <code>&lt;photo-placeholder&gt;</code> divs with <code>&lt;img src="your-photo.jpg"&gt;</code> tags in the HTML file.
-    </div> -->
   </section>
 
-  <!-- BIG 20 -->
+  
   <div class="twenty-section">
     <div class="twenty-number">20</div>
     <p class="twenty-text">
@@ -564,7 +553,7 @@
     </p>
   </div>
 
-  <!-- SWEET MESSAGES -->
+ 
   <section class="section">
     <h2 class="section-title">Things We Love <span>About You</span></h2>
     <div class="section-divider"></div>
@@ -609,7 +598,6 @@
     </div>
   </section>
 
-  <!-- TIMELINE OF 20 YEARS -->
   <section class="section" style="max-width: 700px;">
     <h2 class="section-title">A <span>Journey</span> of 20 Beautiful Years</h2>
     <div class="section-divider"></div>
@@ -638,7 +626,7 @@
     </ul>
   </section>
 
-  <!-- FOOTER -->
+  
   <footer class="footer">
     <p>Made with</p>
     <span class="footer-heart">♥</span>
@@ -649,7 +637,7 @@
 </div>
 
 <script>
-// ── FLOATING HEARTS ──
+
 const heartsEl = document.getElementById('hearts-container');
 const emojis = ['🌸','💖','✨','🌟','💕','🎀','💗','🌺'];
 for(let i=0;i<18;i++){
@@ -663,7 +651,6 @@ for(let i=0;i<18;i++){
   heartsEl.appendChild(h);
 }
 
-// ── SCREEN TRANSITIONS ──
 let currentScreen = 1;
 function goToScreen(n){
   document.getElementById('screen'+currentScreen).classList.remove('active');
